@@ -1,5 +1,5 @@
 # Convert Images
-Drag &amp; drop images onto this web page to convert them to another format, resized and with a chosen background color.
+Drag &amp; drop images onto [this web page](https://wizard04wsu.github.io/convert-images/Convert%20Images.htm) to convert them to another format, resized and with a chosen background color.
 
 This uses a `canvas` element to redraw the image files, optionally with size and background color changes, then generates `img` elements in the chosen format.
 
