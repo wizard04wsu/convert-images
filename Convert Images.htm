@@ -75,6 +75,31 @@
 				document.getElementById('height').addEventListener('change', convertImages, false);
 				document.getElementById('color').addEventListener('change', convertImages, false);
 				document.getElementById('transparent').addEventListener('change', convertImages, false);
+				
+				//===== check which formats the browser can save to =====
+				
+				canvas.width = canvas.height = 1;
+				let supportedTypes = [];
+				for(const f in formats){
+					if(formats.hasOwnProperty(f)){
+						let data = canvas.toDataURL('image/'+f);
+						if(data.slice(11, 11+f.length) === f){
+							supportedTypes.push(f);
+						}
+					}
+				}
+				
+				//===== add supported formats to the drop-down list =====
+				
+				supportedTypes.sort();
+				const sel = document.getElementById("toType");
+				for(let i=0; i<supportedTypes.length; i++){
+					let opt = document.createElement('option');
+					opt.value = supportedTypes[i];
+					opt.textContent = formats[supportedTypes[i]].name;
+					if(supportedTypes[i] === 'png') opt.selected = true;
+					sel.appendChild(opt);
+				}
 			}, false);
 			
 			//==========
@@ -229,14 +254,7 @@
 <body>
 	<p>
 		Drop image files anywhere on the page to convert them to 
-		<select id="toType">
-			<!--<option value="bmp">BMP</option>-->
-			<!--<option value="gif">GIF</option>-->
-			<!--<option value="vnd.microsoft.icon">ICO</option>-->
-			<option value="jpeg">JPEG</option>
-			<option value="png" selected>PNG</option>
-			<option value="webp">WebP</option>
-		</select>
+		<select id="toType"></select>
 	</p>
 	
 	<div>
