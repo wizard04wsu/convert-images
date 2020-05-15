@@ -24,6 +24,12 @@
 			width: 4rem;
 			margin-right: 0.2rem;
 		}
+		#images {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: flex-start;
+		}
 	</style>
 	
 	<script>
@@ -204,7 +210,7 @@
 					//generate the image element
 					const data = canvas.toDataURL('image/'+format);
 					img.src = data;
-					document.body.appendChild(img);
+					document.getElementById('images').appendChild(img);
 				}
 			}
 		})();
@@ -229,5 +235,7 @@
 		<label>Background Color <input id="color" type="text" placeholder="#FFF"></label>
 		<label>Enable Transparency <input id="transparent" type="checkbox" checked></label>
 	</div>
+	
+	<div id="images"></div>
 </body>
 </html>
