@@ -8,13 +8,12 @@
 	<title>Convert Images</title>
 	
 	<style>
-		canvas {
-			display: none;
+		body {
+			margin: 0;
+			padding: 20px;
 		}
-		.tile img {
-			display: block;
-			margin: 20px;
-			box-shadow: 0 0 10px #000;
+		body > p:first-child {
+			margin-top: 0;
 		}
 		label {
 			padding-right: 0.85rem;
@@ -29,6 +28,14 @@
 			flex-direction: row;
 			flex-wrap: wrap;
 			align-items: flex-start;
+			margin: 15px -5px -5px;
+		}
+		.tile {
+			margin: 15px;
+		}
+		.tile img {
+			display: block;
+			box-shadow: 0 0 10px #000;
 		}
 	</style>
 	
