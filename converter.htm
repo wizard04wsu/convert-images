@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	
+	<meta charset="UTF-8">
+	
+	<title>Convert Images</title>
+	
+	<style>
+		canvas {
+			display: none;
+		}
+		.tile img {
+			display: block;
+			margin: 20px;
+			box-shadow: 0 0 10px #000;
+		}
+		label {
+			padding-right: 0.85rem;
+		}
+		#width,
+		#height {
+			width: 4rem;
+			margin-right: 0.2rem;
+		}
+		#images {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: flex-start;
+		}
+	</style>
+	
+	<script type="module" src="main.js"></script>
+	
+</head>
+<body>
+	<p>
+		Drop image files anywhere on the page to convert them to 
+		<select id="toType"></select>
+	</p>
+	
+	<div>
+		<label>Width <input id="width" type="number" min="1" step="1">px</label>
+		<label>Height <input id="height" type="number" min="1" step="1">px</label>
+		<label>Background Color <input id="color" type="text" placeholder="#FFF" disabled value="transparent"></label>
+		<label>Enable Transparency <input id="transparent" type="checkbox" checked></label>
+	</div>
+	
+	<div id="images"></div>
+</body>
+</html>

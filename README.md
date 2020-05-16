@@ -1,6 +1,6 @@
 # Convert Images
-Drag &amp; drop images onto [this web page](https://wizard04wsu.github.io/convert-images/Convert%20Images.htm) to convert them to another format, resized and with a chosen background color.
+Drag &amp; drop images onto [this web page](https://wizard04wsu.github.io/convert-images/converter.htm) to convert them to another format, resized and with a chosen background color.
 
-This uses a `canvas` element to redraw the image files, optionally with size and background color changes, then generates `img` elements in the chosen format.
+This uses a `<canvas>` element to redraw the image files, optionally with size and background color changes, then generates `<img>` elements in the chosen format. The background color can be any value accepted for the CSS `background-color` property.
 
-The only target formats supported are PNG and JPEG, since those seem to be the only ones that most browsers support. (Unsupported formats would just get saved as PNG anyway.)
+The image type drop-down only includes formats that the browser can convert a `<canvas>` element into.
