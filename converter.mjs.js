@@ -135,7 +135,13 @@ function generateImageURI(imgElem, formatObj, width, height, backgroundColor){
 	canvas.width = dims.canvas.width;
 	canvas.height = dims.canvas.height;
 	
-	//draw the background color/pattern
+	if(!formatObj.transparency){	//this format doesn't support transparency
+		//draw the default background first, in case an alpha value is used in the user's chosen background color
+		context.fillStyle = DEFAULT_BACKGROUND;
+		context.fillRect(0, 0, canvas.width, canvas.height);
+	}
+	
+	//draw the chosen background color
 	context.fillStyle = backgroundColor || DEFAULT_BACKGROUND;
 	context.fillRect(0, 0, canvas.width, canvas.height);
 	
