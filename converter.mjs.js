@@ -54,8 +54,8 @@ function convertImage(blob, type, width, height, backgroundColor = DEFAULT_BACKG
 		let img = new Image();
 		
 		img.addEventListener('load', function (evt){
-			let dataURI = generateImageURI(this, format, width, height, backgroundColor);
 			URL.revokeObjectURL(this.src);
+			let dataURI = generateImageURI(this, format, width, height, backgroundColor);
 			resolve(dataURI);
 		}, false);
 		

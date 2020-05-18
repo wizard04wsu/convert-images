@@ -26,6 +26,8 @@ let files;
 function refreshTiles(){
 	//console.log('refreshTiles()');
 	
+	if(!files) return;
+	
 	//remove all the existing tiles
 	document.getElementById('images').innerHTML = '';
 	
